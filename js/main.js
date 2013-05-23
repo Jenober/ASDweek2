@@ -37,6 +37,7 @@ $('#xmlPage').on('pageinit', function(){
 });
 
 $('#jsonPage').on('pageinit',function(){
+
     $('#jsonBtn').on('click',function(){
 
         console.log("getJSON has been called!")
@@ -46,9 +47,11 @@ $('#jsonPage').on('pageinit',function(){
 
         $.ajax({
             url: 'js/json.js',
-            type: 'GET',
-            dataType: 'json',
+            //type: 'GET',
+            //dataType: 'json',
             success: function(response){
+                console.log('Succeessful AJAX CALL!')
+
                 for(var i = 0, len = response.Default.length;i<len;i++){
                     var data = response.Default[i];
 
@@ -60,7 +63,11 @@ $('#jsonPage').on('pageinit',function(){
 
                 }
             },
-            error: function(error,parserror){}
+            error: function(error,parseerror){
+                console.log(error);
+                console.log(parseerror);
+                console.log("Yall done fucked up!")
+            }
 
 
 
@@ -71,30 +78,33 @@ $('#jsonPage').on('pageinit',function(){
         $('#charList').html('</ul>');
     });
 
-
-
-
-
-
-
-
 });
 
 $('#newestPage').on('pageinit', function () {
     console.log("Newest Char page has loaded!!");
 
     console.log("CAlling getData!!");
-
     getData();
+    console.log("Getdata has finished");
 
+    console.log("adding click event for editbtn");
     $('.editBtn').on('click', function () {
         console.log('CLICKY CLICKY!!')
         editKey = $(this).data('id');
         console.log(editKey);
+    });
+
+    console.log("adding click event for delbtn");
+
+    $('.delBtn').on('click', function(){
+        console.log("deleteItem function has been called by: " + this);
+        var key = $(this).data('id');
+        console.log("deleting item at key: "+ key);
+        localStorage.removeItem(key);
+        //alert('The item #' + key + ' had been deleted!!');
 
 
     });
-    $('.delBtn').on('click', deleteItem());
 
 });
 
@@ -194,13 +204,13 @@ var getData = function () {
         });
 
         charList.append("<a href='#editChar' type='button' data-theme='a' class ='editBtn' data-id=" + key + ">Edit Character</a>")
-        charList.append("<button type='button' data-inline='true' class ='delBtn'>Delete Character</button>")
+        charList.append("<button type='button' data-inline='true' data-id= "+ key +" class ='delBtn'>Delete Character</button>")
         charList.append("<p></p>")
 
 
     }
 
-
+    //charList.listview('refresh');
     $('#charList').html('</ul>');
 
 
@@ -210,11 +220,12 @@ var getData = function () {
 
 var getXML = function () {
 console.log('getting XML sir!');
-    var listDiv = $('#xmlListDiv');
-    listDiv.append("<ul id='charList'></ul>");
+    var xmlList = $('#xmlList');
+
+
     $.ajax({
         url: 'js/charSheet.xml',
-        type: "GET",
+        //type: "GET",
         dataType: 'xml',
         success: function(xml){
             console.log('SUCCESSFUL AJAX CALL!');
@@ -222,27 +233,27 @@ console.log('getting XML sir!');
 
             $(xml).find('char').each(function() {
 
-                var thing = $(this),
-                    list = $('#charList');
+                var thing = $(this);
+
                 console.log(thing.find('date').text());
                 var listItem = "Creation date: " + thing.find('date').text();
                 console.log(listItem);
-                list.append('<li>'+listItem+'</li>' );
+                xmlList.append('<li>'+listItem+'</li>' );
                 console.log(thing.find('name').text());
                 listItem = "Character Name: " + thing.find('name').text();
-                list.append("<li>" + listItem + "</li>");
-
+                xmlList.append("<li>" + listItem + "</li>");
+                xmlList.append("<p></p>")
 
 
             });
-            $('#xmlListDiv').html('</ul>');
+            $('#xmlList').listview('refresh');
 
         },
         error: function(){
             alert("Something went wrong!")
         }
     })
-
+    $('#charList').html('</ul>');
 };
 
 var getJSON = function() {
@@ -276,11 +287,11 @@ var storeData = function () {
 };
 
 var deleteItem = function () {
-
-    var key = $('.editBtn').data('id');
+    console.log("deleteItem function has been called by: " + this);
+    var key = $(this).data('id');
 
     localStorage.removeItem(key);
-    alert('The item #' + key + ' had been deleted!!');
+    //alert('The item #' + key + ' had been deleted!!');
 };
 
 var clearLocal = function () {

@@ -6,96 +6,111 @@ var json = {
 
     // Various objects with properties, attributes, etc.
 
-    "Default":[{
+    "Default1":{
 
         "Date": ["Date: ", "12/12/12"],
-        "Name": ['Name: ', "Darmok Un'Jalad Attinagra"],
-        'Race': ['Race: ', 'Dwarf'],
-        "Size": ['Size: ', "Tiny"],
-        "Age": ['Age: ', "132"],
-        "Gender": ["Sex: ",'Male'],
-        "Str": ['Strength: ', '10'],
-        "Con": ['Constitution: ', '10'],
-        "Dex": ['Dexterity: ','10'],
-        "Int": ['Intelligence: ','10'],
-        "Wis": ['Wisdom: ','10'],
-        "Cha": ['Charisma: ', '10'],
-        "Bio": ['Biography: ', '10']
-
-    },
-    {
-
-        "Date": ["Date: ", "12/12/12"],
-        "Name": ['Name: ', "Trix Arfur Kitz"],
-        "Race": ['Race: ', 'Human'],
-        "Size": ['Size: ', "Tiny"],
-        "Age": ['Age: ', "42"],
-        "Gender": ["Sex: ",'Male'],
-        "Str": ['Strength: ', '11'],
-        "Con": ['Constitution: ', '11'],
-        "Dex": ['Dexterity: ','11'],
-        "Int": ['Intelligence: ','11'],
-        "Wis": ['Wisdom: ','11'],
-        "Cha": ['Charisma: ', '11'],
-        "Bio": ['Biography: ', '11']
+        "Name": ["Name: ", "Darmok UnJalad Attinagra"],
+        "Race": ["Race: ", "Dwarf"],
+        "Size": ["Size: ", "Tiny"],
+        "Age": ["Age: ", "132"],
+        "Gender": ["Sex: ","Male"],
+        "Str": ["Strength: ", "10"],
+        "Con": ["Constitution: ", "10"],
+        "Dex": ["Dexterity: ","10"],
+        "Int": ["Intelligence: ","10"],
+        "Wis": ["Wisdom: ","10"],
+        "Cha": ["Charisma: ", "10"],
+        "Bio": ["Biography: ", "10"]
 
     },
 
-    {
+    "Default2":{
 
         "Date": ["Date: ", "12/12/12"],
-        "Name": ['Name: ', "Ed Ippus"],
-        'Race': ['Race: ', 'Gnome'],
-        "Size": ['Size: ', "Tiny"],
-        "Age": ['Age: ', "13"],
-        "Gender": ["Sex: ",'Male'],
-        "Str": ['Strength: ', '10'],
-        "Con": ['Constitution: ', '10'],
-        "Dex": ['Dexterity: ','10'],
-        "Int": ['Intelligence: ','10'],
-        "Wis": ['Wisdom: ','10'],
-        "Cha": ['Charisma: ', '10'],
-        "Bio": ['Biography: ', '10']
+        "Name": ["Name: ", "Trix Arfur Kitz"],
+        "Race": ["Race: ", "Human"],
+        "Size": ["Size: ", "Tiny"],
+        "Age": ["Age: ", "42"],
+        "Gender": ["Sex: ","Male"],
+        "Str": ["Strength: ", "11"],
+        "Con": ["Constitution: ", "11"],
+        "Dex": ["Dexterity: ","11"],
+        "Int": ["Intelligence: ","11"],
+        "Wis": ["Wisdom: ","11"],
+        "Cha": ["Charisma: ", "11"],
+        "Bio": ["Biography: ", "11"]
 
     },
 
-    {
+    "Default3":{
 
         "Date": ["Date: ", "12/12/12"],
-        "Name": ['Name: ', "S. H. Rodinger"],
-        "Race": ['Race: ', 'Half-Orc'],
-        "Size": ['Size: ', "Small"],
-        "Age": ['Age: ', "37"],
-        "Gender": ["Sex: ",'Female'],
-        "Str": ['Strength: ', '11'],
-        "Con": ['Constitution: ', '11'],
-        "Dex": ['Dexterity: ','11'],
-        "Int": ['Intelligence: ','11'],
-        "Wis": ['Wisdom: ','11'],
-        "Cha": ['Charisma: ', '11'],
-        "Bio": ['Biography: ', '11']
+        "Name": ["Name: ", "Ed Ippus"],
+        "Race": ["Race: ", "Gnome"],
+        "Size": ["Size: ", "Tiny"],
+        "Age": ["Age: ", "13"],
+        "Gender": ["Sex: ","Male"],
+        "Str": ["Strength: ", "10"],
+        "Con": ["Constitution: ", "10"],
+        "Dex": ["Dexterity: ","10"],
+        "Int": ["Intelligence: ","10"],
+        "Wis": ["Wisdom: ","10"],
+        "Cha": ["Charisma: ", "10"],
+        "Bio": ["Biography: ", "10"]
 
     },
 
-    {
+    "Default4":{
 
         "Date": ["Date: ", "12/12/12"],
-        "Name": ['Name: ', "Lady Rae"],
-        'Race': ['Race: ', 'Elf'],
-        "Size": ['Size: ', "Small"],
-        "Age": ['Age: ', "412"],
-        "Gender": ["Sex: ",'Female'],
-        "Str": ['Strength: ', '10'],
-        "Con": ['Constitution: ', '10'],
-        "Dex": ['Dexterity: ','10'],
-        "Int": ['Intelligence: ','10'],
-        "Wis": ['Wisdom: ','10'],
-        "Cha": ['Charisma: ', '10'],
-        "Bio": ['Biography: ', '10']
+        "Name": ["Name: ", "S. H. Rodinger"],
+        "Race": ["Race: ", "Half-Orc"],
+        "Size": ["Size: ", "Small"],
+        "Age": ["Age: ", "37"],
+        "Gender": ["Sex: ","Female"],
+        "Str": ["Strength: ", "11"],
+        "Con": ["Constitution: ", "11"],
+        "Dex": ["Dexterity: ","11"],
+        "Int": ["Intelligence: ","11"],
+        "Wis": ["Wisdom: ","11"],
+        "Cha": ["Charisma: ", "11"],
+        "Bio": ["Biography: ", "11"]
 
-    }]
+    },
 
+    "Default5":{
 
+        "Date": ["Date: ", "12/12/12"],
+        "Name": ["Name: ", "Lady Rae"],
+        "Race": ["Race: ", "Elf"],
+        "Size": ["Size: ", "Small"],
+        "Age": ["Age: ", "412"],
+        "Gender": ["Sex: ","Female"],
+        "Str": ["Strength: ", "10"],
+        "Con": ["Constitution: ", "10"],
+        "Dex": ["Dexterity: ","10"],
+        "Int": ["Intelligence: ","10"],
+        "Wis": ["Wisdom: ","10"],
+        "Cha": ["Charisma: ", "10"],
+        "Bio": ["Biography: ", "10"]
 
+    },
 
+    "Default6":{
+
+        "Date": ["Date: ", "12/12/12"],
+        "Name": ["Name: ", "Alex Morgan"],
+        "Race": ["Race: ", "Human"],
+        "Size": ["Size: ", "Small"],
+        "Age": ["Age: ", "32"],
+        "Gender": ["Sex: ","Male"],
+        "Str": ["Strength: ", "11"],
+        "Con": ["Constitution: ", "11"],
+        "Dex": ["Dexterity: ","11"],
+        "Int": ["Intelligence: ","11"],
+        "Wis": ["Wisdom: ","11"],
+        "Cha": ["Charisma: ", "11"],
+        "Bio": ["Biography: ", "11"]
+
+    }
 }
