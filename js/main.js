@@ -41,27 +41,31 @@ $('#jsonPage').on('pageinit',function(){
     $('#jsonBtn').on('click',function(){
 
         console.log("getJSON has been called!")
-        var charList = $('#jsonDiv');
-        charList.append("<ul>");
+        var charList = $('#jsonList');
         console.log(charList);
 
         $.ajax({
-            url: 'js/json.js',
-            //type: 'GET',
-            //dataType: 'json',
+            url: 'js/json.json',
+            type: 'GET',
+            dataType: 'json',
             success: function(response){
                 console.log('Succeessful AJAX CALL!')
+                  // console.log(response.Default[1]);
 
-                for(var i = 0, len = response.Default.length;i<len;i++){
-                    var data = response.Default[i];
+                for(var key in response){
+                    console.log("this is the key: " + key);
+                    var each = response[key];
+                    console.log("This is the each: " + each);
+                    for (var char in each){
+                        //console.log("This is Char: "+ each[char][0]);
 
-                    $(''+ '<li>'+ data.Date[0]+' '+data.Date[1]+'</li>'+
-                          '<li>'+data.Name[0]+' '+data.Name[1]+'</li>'+
-                          '<li>'+data.Race[0]+' '+data.Race[1]+'</li>'
-                    ).appendTo(charList);
+                        charList.append("<li>" + each[char][0] + " " + each[char][1]+'</li>')
 
+                    }
+                    charList.append("<p></p>");
 
                 }
+
             },
             error: function(error,parseerror){
                 console.log(error);
